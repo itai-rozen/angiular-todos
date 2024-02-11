@@ -7,23 +7,17 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
-  .incomplete-todo {
-    color: red;
-  }
-</style>
 
 <main class="main">
   <ul>
-      <li *ngFor="let todo of todos" class="{{todo.isComplete ? '' : 'incomplete-todo'}}">
-        {{todo.title}}
-        <button id="{{todo.id}}">Delete</button>
-      </li>
+      <todo *ngFor="let todo of todos"
+        (deleteTodoEvent)="deleteTodoEvent($event)"
+        [singleTodo]="todo"
+      >
+      </todo>
   </ul>
-  <form onsubmit="createTodo">
-    <input type="text" placeholder="New Todo">
-    <input type="submit" value="Add Todo">
-  </form>
+  <todo-form (CreateTodoEvent)="createTodoEvent($event)"></todo-form>
+
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
