@@ -1,2 +1,2 @@
-<input #newTodo />
-<button (click)="createTodo(newTodo.value)">Add Todo</button>
+<input #newTodo placeholder="E.g 'Get Naked'" />
+<button (click)="createTodo(newTodo.value);newTodo.value='';">Add Todo</button>
