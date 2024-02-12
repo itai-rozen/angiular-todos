@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { NgFor } from '@angular/common';
 import { TodoComponent } from './components/Todo/todo.component';
 import { FormComponent } from './components/Form/form.component';
+import { EditFormComponent } from './components/EditForm/editform.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgFor,TodoComponent, FormComponent],
+  imports: [RouterOutlet, NgFor,TodoComponent, FormComponent,EditFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
