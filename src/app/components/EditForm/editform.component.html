@@ -1,1 +1,2 @@
-<h1>Am I the right color??</h1>
+<input type="text" value="{{todo.title}}" #newTitle>
+<button (click)="$event.stopPropagation();changeTitle(newTitle.value)">Change Todo</button>

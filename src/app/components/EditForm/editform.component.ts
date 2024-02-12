@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component, Output, EventEmitter, Input } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
+import { Todo } from "../../app.component";
 @Component({
   selector: 'edit-form',
   standalone: true,
@@ -8,8 +9,14 @@ import { FormBuilder } from "@angular/forms";
 })
 
 export class EditFormComponent {
-  @Output() EditTodoEvent = new EventEmitter<string>;
-  editTodo() {
-    this.EditTodoEvent.emit(event.value)
+  @Output() UpdateEvent = new EventEmitter<Todo>()
+  @Input() todo!: Todo
+  updateTitle() {
+    this.UpdateEvent.emit(this.todo)
+  }
+  changeTitle(value: string) {
+    this.todo.title = value ;
+    this.todo.isEdit = false;
+    this.updateTitle()
   }
 }
