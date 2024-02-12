@@ -1,4 +1,12 @@
-<li class="todo">
+<li class="todo {{singleTodo.isComplete ? 'complete' : ''}}" >
   <button (click)="deleteTodo(singleTodo.id)">Delete</button>
-  <p>{{singleTodo.title}}</p>
+  <button (click)="updateTodo('isEdit', singleTodo.id, !singleTodo.isEdit)">{{singleTodo.isEdit ? "Cancel" : "Update" }}</button>
+  @if (singleTodo.isEdit) {
+    <edit-form
+    [todo]="singleTodo"
+    ></edit-form>
+  } @else {
+    <p style="cursor: pointer;" (click)="updateTodo('isComplete', singleTodo.id, !singleTodo.isComplete)">{{singleTodo.title}}</p>
+  }
+  
 </li>
