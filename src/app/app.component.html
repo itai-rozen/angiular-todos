@@ -12,12 +12,12 @@
   <ul>
       <todo *ngFor="let todo of todos"
         (deleteTodoEvent)="deleteTodoEvent($event)"
+        (updateTodoEvent)="updateTodoEvent($any($event))"
         [singleTodo]="todo"
       >
       </todo>
   </ul>
-  <todo-form (CreateTodoEvent)="createTodoEvent($event)"></todo-form>
-  <edit-form></edit-form>
+  <todo-form (CreateTodoEvent)="createTodoEvent($event)" ></todo-form>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
