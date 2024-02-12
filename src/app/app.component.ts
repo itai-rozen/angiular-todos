@@ -33,7 +33,7 @@ export class AppComponent {
       this.todos = this.todos.filter(todo => todo.id !== id);
   }
   createTodoEvent = (title: string) => {
-    this.todos.push({id: this.todos.length+1, title, isComplete: false, isEdit: false})
+    this.todos.push({id: Math.floor(Math.random() * 1000), title, isComplete: false, isEdit: false})
   }
   updateTodoEvent = ({prop, id, content}: UpdateArgs) => {
     if (!id)
