@@ -1,4 +1,4 @@
 <form [formGroup]="editFormGroup" (ngSubmit)="$event.stopPropagation();changeTitle();">
   <input type="text" formControlName="editFormTitle" placeholder="{{todo.title}}" value="{{todo.title}}" #newTitle>
-  <input type="submit" value="Change Todo">
+  <button type="submit" >Change Todo</button>
 </form>
