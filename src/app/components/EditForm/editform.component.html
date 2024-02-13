@@ -1,2 +1,4 @@
-<input type="text" value="{{todo.title}}" #newTitle>
-<button (click)="$event.stopPropagation();changeTitle(newTitle.value)">Change Todo</button>
+<form onsubmit="$event.stopPropagation();changeTitle(newTitle.value);return false;">
+  <input type="text" value="{{todo.title}}" #newTitle>
+  <input type="submit" value="Change Todo">
+</form>
